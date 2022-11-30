@@ -57,6 +57,8 @@ superset:
     elastic: true
     trino: true
     sparkThriftServer: true
+  postgresql:
+    fullnameOverride: "superset-db"
 
 
 
