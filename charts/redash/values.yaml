@@ -1,0 +1,36 @@
+global:
+  postgresql:
+    auth:
+      username: "admin"
+      password: "changeme"
+      database: "redash"
+      
+postgresql:
+  image:
+    tag: "12"
+  fullnameOverride: "redash-db"
+
+ingress:
+  enabled: true
+  tls: true
+  annotations: []
+  ingressClassName: ""
+    # kubernetes.io/tls-acme: "true"
+  hostname: chart-example.local
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+redash:
+  image:
+    repository: redash/redash
+    tag: 10.0.0.b50363
+  externalPostgreSQLSecret:
+    name: redash-postgres
+    key: connectionString
+  redash:
+    cookieSecret: changeme
+    secretKey: changeme
+  postgresql:
+    enabled: false
+    existingSecret: toto
