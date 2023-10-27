@@ -1,8 +1,14 @@
+{{- if eq .Values.userPreferences.language "fr" }}
+{{- if .Values.ingress.enabled }}
+- Vous pouvez vous connecter à ce Superset en cliquant sur ce [lien](https://{{ .Values.ingress.hostname }})
+- Le login est **{{ .Values.superset.init.adminUser.username }}**
+- Le password est **{{ .Values.superset.init.adminUser.password }}**
+{{- end }}
+
+{{- else }}
 {{- if .Values.ingress.enabled }}
 - You can connect to superset with your browser on this [link](https://{{ .Values.ingress.hostname }})
 - The login is **{{ .Values.superset.init.adminUser.username }}**
 - The password is **{{ .Values.superset.init.adminUser.password }}**
 {{- end }}
-
-
-**This chart is an alpha release, use it with caution**
+{{- end }}

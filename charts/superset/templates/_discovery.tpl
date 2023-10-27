@@ -13,6 +13,7 @@
 Create the name of the config map S3 to use
 */}}
 {{- define "superset.discovery" -}}
+{{- printf "# Enabling discovery of other services" | indent 2 }}
 {{- $postgres:= .Values.discovery.postgres }}
 {{- $elastic:= .Values.discovery.elastic }}
 {{- $trino:= .Values.discovery.trino }}

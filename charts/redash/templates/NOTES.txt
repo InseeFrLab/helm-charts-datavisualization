@@ -1,3 +1,17 @@
+{{- if eq .Values.userPreferences.language "fr" }}
+{{- if .Values.ingress.enabled }}
+- Vous pouvez vous connecter à ce Redash en cliquant sur ce [lien](https://{{ .Values.ingress.hostname }})
+
+*NOTES concernant la suppression :*
+
+- **Vous pouvez supprimer ce graphique en toute sécurité et en recréer un plus tard**
+- Les volumes de données dans le postgresql associé ne seront pas supprimés
+- Si vous démarrez un nouveau {{ .Chart.Name }}, il réutilisera ce volume en silence.
+- Si vous souhaitez supprimer définitivement ce volume : `kubectl delete pvc data-{{ .Values.postgresql.fullnameOverride }}-0`
+
+{{- end }}
+
+{{- else }}
 {{- if .Values.ingress.enabled }}
 - You can connect to redash with your browser on this [link](https://{{ .Values.ingress.hostname }})
 {{- end }}
