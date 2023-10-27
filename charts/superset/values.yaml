@@ -41,6 +41,7 @@ superset:
     #!/bin/bash
     rm -rf /var/lib/apt/lists/* && \
     pip install \
+      duckdb-engine \
       psycopg2-binary \
       sqlalchemy-trino \
       PyHive \
