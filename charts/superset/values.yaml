@@ -1,7 +1,7 @@
 superset:
   image:
     repository: apache/superset
-    tag: 9cdaa280429ec297db16d56c94fd77b5d2aff107
+    tag: master-py310
     pullPolicy: IfNotPresent
   init:
     adminUser:
@@ -41,11 +41,11 @@ superset:
     #!/bin/bash
     rm -rf /var/lib/apt/lists/* && \
     pip install \
-      psycopg2-binary==2.9.1 \
-      sqlalchemy-trino==0.4.1 \
-      PyHive==0.6.5 \
-      elasticsearch-dbapi==0.2.9 \
-      redis==3.5.3 && \
+      psycopg2-binary \
+      sqlalchemy-trino \
+      PyHive \
+      elasticsearch-dbapi \
+      redis && \
     if [ ! -f ~/bootstrap ]; then echo "Running Superset with uid {{ .Values.runAsUser }}" > ~/bootstrap; fi
   extraConfigs:
     import_datasources.yaml: |
@@ -62,9 +62,6 @@ superset:
       db_host: superset-db
   postgresql:
     fullnameOverride: "superset-db"
-
-
-
 
 ingress:
   enabled: true
