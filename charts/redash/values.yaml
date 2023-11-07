@@ -34,3 +34,6 @@ redash:
   postgresql:
     enabled: false
     existingSecret: toto
+
+userPreferences:
+  language: "en"
