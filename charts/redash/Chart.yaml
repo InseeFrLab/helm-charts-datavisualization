@@ -35,7 +35,7 @@ dependencies:
     version: 3.0.0
     repository:  https://getredash.github.io/contrib-helm-chart/
   - name: postgresql
-    version: 11.6.15
+    version: 13.4.3
     repository:  https://charts.bitnami.com/bitnami
   - name: library-chart
     version: 1.5.15
