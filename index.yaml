@@ -58,6 +58,36 @@ entries:
   redash:
   - apiVersion: v2
     appVersion: latest
+    created: "2024-02-08T13:43:23.2414548Z"
+    dependencies:
+    - name: redash
+      repository: https://getredash.github.io/contrib-helm-chart/
+      version: 3.0.0
+    - name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.6.15
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.19
+    description: Redash is an open source tool built for teams to query, visualize
+      and collaborate.
+    digest: 75333b1d71b5e90847d165c56e2144c3ad2cbf81f01cd83c3846cc6bd3220404
+    home: https://redash.io/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/redash.png
+    keywords:
+    - Tool
+    - Data
+    name: redash
+    sources:
+    - https://github.com/InseeFrLab/redash
+    - https://github.com/InseeFrLab/helm-charts-datascience/tree/master/charts/redash
+    - https://github.com/getredash/redash
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-datavisualization/releases/download/redash-0.0.5/redash-0.0.5.tgz
+    version: 0.0.5
+  - apiVersion: v2
+    appVersion: latest
     created: "2023-11-07T15:51:59.196603501Z"
     dependencies:
     - name: redash
@@ -401,4 +431,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-datavisualization/releases/download/superset-0.0.1/superset-0.0.1.tgz
     version: 0.0.1
-generated: "2024-02-08T13:40:59.66936642Z"
+generated: "2024-02-08T13:43:23.241514461Z"
