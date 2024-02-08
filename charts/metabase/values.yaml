@@ -75,7 +75,9 @@ ingress:
   #  - secretName: chart-example-tls
   #    hosts:
   #      - chart-example.local
-
+  useCertManager: false
+  certManagerClusterIssuer: ""
+  
 route:
   enabled: false
   annotations: []
