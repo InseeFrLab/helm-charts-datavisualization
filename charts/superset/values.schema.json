@@ -46,7 +46,7 @@
           "description": "bootstrap script",
           "type": "string",
           "render": "textArea",
-          "default": "#!/bin/bash \n pip install\\\n      duckdb-engine \\\n      psycopg2-binary \\\n      sqlalchemy-trino \\\n      PyHive \\\n      elasticsearch-dbapi \\\n      redis && \\\n    if [ ! -f ~/bootstrap ]; then echo \"Running Superset with uid {{ .Values.runAsUser }}\" > ~/bootstrap; fi"
+          "default": "#!/bin/bash \n pip install \\\n      duckdb-engine \\\n      psycopg2-binary \\\n      sqlalchemy-trino \\\n      PyHive \\\n      elasticsearch-dbapi \\\n      redis && \\\n    if [ ! -f ~/bootstrap ]; then echo \"Running Superset with uid {{ .Values.runAsUser }}\" > ~/bootstrap; fi"
         }
       }
     },
