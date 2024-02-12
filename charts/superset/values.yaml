@@ -1,8 +1,4 @@
 superset:
-  image:
-    repository: apache/superset
-    tag: master-py310
-    pullPolicy: IfNotPresent
   init:
     adminUser:
       username: admin
@@ -37,9 +33,13 @@ superset:
           superset import_datasources -p {{ .Values.extraConfigMountPath }}/import_datasources.yaml
         fi
       fi
+
+  configOverrides:
+    secret: |
+      SECRET_KEY = {{ .Values.init.adminUser.password | quote }}
+
   bootstrapScript: |
     #!/bin/bash
-    rm -rf /var/lib/apt/lists/* && \
     pip install \
       duckdb-engine \
       psycopg2-binary \
@@ -48,9 +48,11 @@ superset:
       elasticsearch-dbapi \
       redis && \
     if [ ! -f ~/bootstrap ]; then echo "Running Superset with uid {{ .Values.runAsUser }}" > ~/bootstrap; fi
+
   extraConfigs:
     import_datasources.yaml: |
       {{ include "superset.discovery" . }}
+
   discovery:
     hive: true
     mongodb: true
@@ -58,15 +60,17 @@ superset:
     elastic: true
     trino: true
     sparkThriftServer: true
+
   supersetNode:
     connections:
       db_host: superset-db
+
   postgresql:
     fullnameOverride: "superset-db"
 
 ingress:
-  enabled: true
-  ingressClassName: ""
+  enabled: false
+#  ingressClassName: ""
   tls: true
   annotations: []
     # kubernetes.io/tls-acme: "true"

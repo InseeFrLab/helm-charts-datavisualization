@@ -41,6 +41,12 @@
               }
             }
           }
+        },
+        "bootstrapScript": {
+          "description": "bootstrap script",
+          "type": "string",
+          "render": "textArea",
+          "default": "#!/bin/bash \n pip install\\\n      duckdb-engine \\\n      psycopg2-binary \\\n      sqlalchemy-trino \\\n      PyHive \\\n      elasticsearch-dbapi \\\n      redis && \\\n    if [ ! -f ~/bootstrap ]; then echo \"Running Superset with uid {{ .Values.runAsUser }}\" > ~/bootstrap; fi"
         }
       }
     },
@@ -49,6 +55,15 @@
       "form": true,
       "title": "Ingress Details",
       "properties": {
+        "enabled": {
+          "description": "Enable Ingress",
+          "type": "boolean",
+          "default": true,
+          "x-onyxia": {
+              "hidden": true,
+              "overwriteDefaultWith": "k8s.ingress"
+          }
+        },
         "hostname": {
             "type": "string",
             "form": true,
@@ -75,6 +90,30 @@
                 "overwriteDefaultWith": "{{k8s.ingressClassName}}"
             }
         }    
+      }
+    },
+    "userPreferences": {
+      "description": "User Preferences",
+      "type": "object",
+      "properties": {
+        "darkMode": {
+          "type": "boolean",
+          "description": "dark mode is or is not enabled",
+          "default": false,
+          "x-onyxia": {
+            "hidden": true,
+            "overwriteDefaultWith": "user.darkMode"
+          }
+        },
+        "language": {
+          "type": "string",
+          "description": "Preferred language",
+          "default": "en",
+          "x-onyxia": {
+            "hidden": true,
+            "overwriteDefaultWith": "user.lang"
+          }
+        }
       }
     }
   }  

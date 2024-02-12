@@ -30,7 +30,7 @@ Create the name of the config map S3 to use
 {{- $port:= ( index $secret.data "postgres-port") }}
 {{- $data := dict "postgres" $postgres "service" $service  "index" $index "username" $username "password" $password "database" $database "port" $port}}
 {{- if $test }}
-{{- printf "databases:" | indent 2 }}
+{{ printf "databases:" | indent 2 }}
 {{- $test = 0}}
 {{- end }}
 {{- template "superset.postgres" $data -}}
@@ -41,7 +41,7 @@ Create the name of the config map S3 to use
 {{- $port:= ( index $secret.data "elastic-port") | b64dec }}
 {{- $data := dict "elastic" $elastic "service" $service "name" $name "port" $port}}
 {{- if $test }}
-{{- printf "databases:" | indent 2 }}
+{{ printf "databases:" | indent 2 }}
 {{- $test = 0}}
 {{- end }}
 {{- template "superset.elastic" $data -}}
@@ -54,7 +54,7 @@ Create the name of the config map S3 to use
 {{- $port:= ( index $secret.data "trino-port") | b64dec  }}
 {{- $data := dict "trino" $trino "service" $service  "index" $index "username" $username "password" $password "database" $database "port" $port}}
 {{- if $test }}
-{{- printf "databases:" | indent 2 }}
+{{ printf "databases:" | indent 2 }}
 {{- $test = 0}}
 {{- end }}
 {{- template "superset.trino" $data -}}
@@ -64,7 +64,7 @@ Create the name of the config map S3 to use
 {{- $port:= ( index $secret.data "thrift-port") | b64dec  }}
 {{- $data := dict "spark" $spark "service" $service  "index" $index  "port" $port}}
 {{- if $test }}
-{{- printf "databases:" | indent 2 }}
+{{ printf "databases:" | indent 2 }}
 {{- $test = 0}}
 {{- end }}
 {{- template "superset.spark" $data -}}
