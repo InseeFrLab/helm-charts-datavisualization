@@ -7,7 +7,7 @@ keywords:
   - Data
 home: https://www.metabase.com/
 sources:
-  - https://github.com/InseeFrLab/helm-charts-databases/tree/main/charts/metabase
+  - https://github.com/InseeFrLab/helm-charts-datavisualization/tree/main/charts/metabase
   - https://hub.docker.com/r/metabase/metabase/
 # A chart can be either an 'application' or a 'library' chart.
 #
