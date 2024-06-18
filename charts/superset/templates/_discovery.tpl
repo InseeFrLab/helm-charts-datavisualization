@@ -39,7 +39,10 @@ Create the name of the config map S3 to use
 {{- $service:= ( index $secret.data "elastic-service" | default "") | b64dec  }}
 {{- $name:= ( index $secret.data "elastic-name" | default "") | b64dec  }}
 {{- $port:= ( index $secret.data "elastic-port") | b64dec }}
-{{- $data := dict "elastic" $elastic "service" $service "name" $name "port" $port}}
+{{- $password := ( index $secret.data "elastic-password" | default "") | b64dec }}
+{{- $tls := ( index $secret.data "elastic-tls" | default "ZmFsc2U=") | b64dec  }}
+{{- $username := ( index $secret.data "elastic-username" | default "") | b64dec }}
+{{- $data := dict "elastic" $elastic "service" $service "name" $name "port" $port "password" $password "username" $username "tls" $tls }}
 {{- if $test }}
 {{ printf "databases:" | indent 2 }}
 {{- $test = 0}}
@@ -96,12 +99,23 @@ Create the name of the config map S3 to use
 {{- $service:= .service }}
 {{- $port:= .port }}
 {{- $name:= .name }}
+{{- $username:= .username }}
+{{- $password:= .password }}
+{{- $tls:= .tls }}
 {{- if $elastic }}
 {{ printf "- allow_file_upload: true"| indent 2}}
 {{ printf "allow_ctas: true"| indent 4}}
 {{ printf "allow_cvas: true"| indent 4}}
 {{ printf "database_name: %s" $name | indent 4}}
+{{- if eq $tls "true" }}
+{{- if and $password $username }}
+{{ printf "sqlalchemy_uri: elasticsearch+https://%s:%s@%s:%s/" $username $password $service $port | indent 4 }}
+{{- else }}
+{{ printf "sqlalchemy_uri: elasticsearch+https://%s:%s/" $service $port | indent 4 }}
+{{- end }}
+{{- else }}
 {{ printf "sqlalchemy_uri: elasticsearch+http://%s:%s/" $service $port | indent 4}}
+{{- end }}
 {{ printf "tables: []" | indent 4}}
 {{- end }}
 {{- end -}} 
