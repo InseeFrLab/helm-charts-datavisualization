@@ -3,6 +3,33 @@ entries:
   metabase:
   - apiVersion: v2
     appVersion: 1.0.1
+    created: "2024-06-18T14:34:31.456294072Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.23
+    - enabled: true
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.6.15
+    description: Metabase is a BI tool with a friendly UX and an integrated tooling
+      to let you explore data.
+    digest: a4ac2b2e3de9176f4520b87d96c3d8076109601a2b78c275318693f9bd1169bc
+    home: https://www.metabase.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/metabase.png
+    keywords:
+    - Tool
+    - Data
+    name: metabase
+    sources:
+    - https://github.com/InseeFrLab/helm-charts-datavisualization/tree/main/charts/metabase
+    - https://hub.docker.com/r/metabase/metabase/
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-datavisualization/releases/download/metabase-1.2.4/metabase-1.2.4.tgz
+    version: 1.2.4
+  - apiVersion: v2
+    appVersion: 1.0.1
     created: "2024-02-29T13:58:07.669793954Z"
     dependencies:
     - name: library-chart
@@ -110,6 +137,36 @@ entries:
     - https://github.com/InseeFrLab/helm-charts-datavisualization/releases/download/metabase-1.2.0/metabase-1.2.0.tgz
     version: 1.2.0
   redash:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2024-06-18T14:34:31.639119996Z"
+    dependencies:
+    - name: redash
+      repository: https://getredash.github.io/contrib-helm-chart/
+      version: 3.0.0
+    - name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.6.15
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.23
+    description: Redash is an open source tool built for teams to query, visualize
+      and collaborate.
+    digest: 330c9e6185de19a9c5b9e09328ff421a8db83909a73b7090b74450ff2c49a552
+    home: https://redash.io/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/redash.png
+    keywords:
+    - Tool
+    - Data
+    name: redash
+    sources:
+    - https://github.com/InseeFrLab/redash
+    - https://github.com/InseeFrLab/helm-charts-datascience/tree/master/charts/redash
+    - https://github.com/getredash/redash
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-datavisualization/releases/download/redash-0.0.6/redash-0.0.6.tgz
+    version: 0.0.6
   - apiVersion: v2
     appVersion: latest
     created: "2024-02-08T13:43:23.2414548Z"
@@ -265,6 +322,30 @@ entries:
     - https://github.com/InseeFrLab/helm-charts-datavisualization/releases/download/redash-0.0.1/redash-0.0.1.tgz
     version: 0.0.1
   superset:
+  - apiVersion: v2
+    created: "2024-06-18T14:34:31.794472213Z"
+    dependencies:
+    - name: superset
+      repository: https://apache.github.io/superset
+      version: 0.12.11
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.23
+    description: Apache Superset is a modern data exploration and visualization platform.
+    digest: 5689299df9973da54fff0a869219ac0a418cdaa94ce1d93d44b8962966b6ac74
+    home: https://superset.apache.org/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/superset.png
+    keywords:
+    - BI
+    - Visualization
+    name: superset
+    sources:
+    - https://github.com/InseeFrLab/helm-charts-datascience/tree/master/charts/superset
+    - https://github.com/apache/superset
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-datavisualization/releases/download/superset-0.1.5/superset-0.1.5.tgz
+    version: 0.1.5
   - apiVersion: v2
     created: "2024-06-18T13:45:36.688096269Z"
     dependencies:
@@ -605,4 +686,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-datavisualization/releases/download/superset-0.0.1/superset-0.0.1.tgz
     version: 0.0.1
-generated: "2024-06-18T13:45:36.688193872Z"
+generated: "2024-06-18T14:34:31.794618607Z"
