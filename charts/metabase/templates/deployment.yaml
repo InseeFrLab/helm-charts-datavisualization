@@ -43,9 +43,9 @@ spec:
           - name: MB_DB_PORT
             value: "5432"
           - name: MB_DB_USER
-            value: {{ .Values.global.postgresql.auth.username }}
+            value: postgres
           - name: MB_DB_PASS
-            value: {{ .Values.global.postgresql.auth.password }}
+            value: {{ .Values.global.postgresql.auth.postgresPassword }}
           - name: MB_DB_HOST
             value: {{ .Values.postgresql.fullnameOverride }}
           - name: MB_ADMIN_EMAIL

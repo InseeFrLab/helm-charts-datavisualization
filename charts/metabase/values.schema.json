@@ -195,6 +195,17 @@
                     "overwriteDefaultWith": "{{project.password}}"
                   }
                 },
+                "postgresPassword": {
+                  "type": "string",
+                  "title": "Password",
+                  "default": "changeme",
+                  "x-form": {
+                    "value": "{{project.password}}"
+                  },
+                  "x-onyxia": {
+                    "overwriteDefaultWith": "{{project.password}}"
+                  }
+                },
                 "database": {
                   "description": "Name for the default database that is created when the image is first started.",
                   "type": "string",
