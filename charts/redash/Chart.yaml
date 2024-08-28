@@ -32,7 +32,7 @@ appVersion: "latest"
 
 dependencies:
   - name: redash
-    version: 3.0.0
+    version: 3.0.1
     repository:  https://getredash.github.io/contrib-helm-chart/
   - name: postgresql
     version: 11.6.15
