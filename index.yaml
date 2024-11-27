@@ -3,6 +3,33 @@ entries:
   metabase:
   - apiVersion: v2
     appVersion: 1.0.1
+    created: "2024-11-27T10:54:07.82944696Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.23
+    - enabled: true
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 15.5.19
+    description: Metabase is a BI tool with a friendly UX and an integrated tooling
+      to let you explore data.
+    digest: a9c6ef5dad9cc42ee5a83b0b8b5e991e9955670e15293a7010cc58cf86955e3a
+    home: https://www.metabase.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/metabase.png
+    keywords:
+    - Tool
+    - Data
+    name: metabase
+    sources:
+    - https://github.com/InseeFrLab/helm-charts-datavisualization/tree/main/charts/metabase
+    - https://hub.docker.com/r/metabase/metabase/
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-datavisualization/releases/download/metabase-2.0.1/metabase-2.0.1.tgz
+    version: 2.0.1
+  - apiVersion: v2
+    appVersion: 1.0.1
     created: "2024-09-09T14:45:52.271954777Z"
     dependencies:
     - name: library-chart
@@ -740,4 +767,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-datavisualization/releases/download/superset-0.0.1/superset-0.0.1.tgz
     version: 0.0.1
-generated: "2024-09-09T14:45:52.272006093Z"
+generated: "2024-11-27T10:54:07.829529996Z"
