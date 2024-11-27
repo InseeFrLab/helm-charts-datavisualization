@@ -148,7 +148,7 @@
                 },
                 "password": {
                   "type": "string",
-                  "title": "Password",
+                  "title": "User password",
                   "default": "changeme",
                   "x-form": {
                     "value": "{{project.password}}"
@@ -159,7 +159,7 @@
                 },
                 "postgresPassword": {
                   "type": "string",
-                  "title": "Password",
+                  "title": "Postgres password",
                   "default": "changeme",
                   "x-form": {
                     "value": "{{project.password}}"
