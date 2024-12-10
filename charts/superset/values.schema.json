@@ -1,24 +1,22 @@
 {
-  "$schema": "http://json-schema.org/schema#",
+  "$schema": "http://json-schema.org/draft-07/schema",
   "type": "object",
   "properties": {
     "superset": {
-      "description": "superset specific configuration",
+      "title": "Superset configuration",
       "type": "object",
-      "title": "superset",
       "properties": {
         "init": {
-          "description": "init",
+          "title": "Credentials",
           "type": "object",
-          "title": "superset",
           "properties": {
             "adminUser": {
-              "type": "object",
               "title": "Admin user",
+              "type": "object",
               "properties": {
                 "username": {
+                  "title": "User name",
                   "type": "string",
-                  "title": "Admin user",
                   "default": "admin",
                   "x-form": {
                     "value": "{{project.id}}"
@@ -28,8 +26,8 @@
                   }
                 },
                 "password": {
+                  "title": "Password",
                   "type": "string",
-                  "description": "Password",
                   "default": "changeme",
                   "render": "password",
                   "x-form": {
@@ -44,7 +42,7 @@
           }
         },
         "bootstrapScript": {
-          "description": "bootstrap script",
+          "title": "Bootstrap init script",
           "type": "string",
           "render": "textArea",
           "default": "#!/bin/bash \n pip install \\\n      duckdb-engine \\\n      psycopg2-binary \\\n      sqlalchemy-trino \\\n      PyHive \\\n      elasticsearch-dbapi \\\n      redis && \\\n    if [ ! -f ~/bootstrap ]; then echo \"Running Superset with uid {{ .Values.runAsUser }}\" > ~/bootstrap; fi"
