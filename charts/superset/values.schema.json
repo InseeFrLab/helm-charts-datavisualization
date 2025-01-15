@@ -22,7 +22,7 @@
                     "value": "{{project.id}}"
                   },
                   "x-onyxia": {
-                      "overwriteDefaultWith": "{{project.id}}"
+                    "overwriteDefaultWith": "{{project.id}}"
                   }
                 },
                 "password": {
@@ -34,7 +34,7 @@
                     "value": "{{project.password}}"
                   },
                   "x-onyxia": {
-                      "overwriteDefaultWith": "{{project.password}}"
+                    "overwriteDefaultWith": "{{project.password}}"
                   }
                 }
               }
@@ -59,35 +59,35 @@
           "type": "boolean",
           "default": true,
           "x-onyxia": {
-              "hidden": true,
-              "overwriteDefaultWith": "k8s.ingress"
+            "hidden": true,
+            "overwriteDefaultWith": "k8s.ingress"
           }
         },
         "hostname": {
-            "type": "string",
-            "form": true,
-            "title": "Hostname",
-            "x-form": {
-              "value": "{{project.id}}-{{k8s.randomSubdomain}}.{{k8s.domain}}"
-            },
-            "x-onyxia": {
-                "hidden": true,
-                "overwriteDefaultWith": "{{project.id}}-{{k8s.randomSubdomain}}.{{k8s.domain}}"
-            }
+          "type": "string",
+          "form": true,
+          "title": "Hostname",
+          "x-form": {
+            "value": "{{project.id}}-{{k8s.randomSubdomain}}.{{k8s.domain}}"
+          },
+          "x-onyxia": {
+            "hidden": true,
+            "overwriteDefaultWith": "{{project.id}}-{{k8s.randomSubdomain}}.{{k8s.domain}}"
+          }
         },
         "ingressClassName": {
-            "type": "string",
-            "form": true,
-            "title": "ingressClassName",
-            "default": "",
-            "x-form": {
-                "hidden": true,
-                "value": "{{k8s.ingressClassName}}"
-            },
-            "x-onyxia": {
-                "hidden": true,
-                "overwriteDefaultWith": "{{k8s.ingressClassName}}"
-            }
+          "type": "string",
+          "form": true,
+          "title": "ingressClassName",
+          "default": "",
+          "x-form": {
+            "hidden": true,
+            "value": "{{k8s.ingressClassName}}"
+          },
+          "x-onyxia": {
+            "hidden": true,
+            "overwriteDefaultWith": "{{k8s.ingressClassName}}"
+          }
         }
       }
     },
@@ -116,5 +116,4 @@
       }
     }
   }
-
 }
