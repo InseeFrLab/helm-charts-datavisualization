@@ -4,8 +4,8 @@
 {{- if .Values.route.enabled }}
 - You can connect to Metabase with your browser on this [link](https://{{ .Values.route.hostname }})
 {{- end }}
-- After the first launch, you will need to set your login credentials. 
-- If you start a new {{ .Chart.Name }}, the same settings will be reused silently. 
+- After the first launch, you will need to set your login credentials.
+- If you start a new {{ .Chart.Name }}, the same settings will be reused silently.
 
 *NOTES about deletion :*
 
