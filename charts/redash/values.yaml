@@ -39,6 +39,8 @@ redash:
   postgresql:
     enabled: false
     existingSecret: toto
-
+  redis:
+    image:
+      repository: bitnamilegacy/redis
 userPreferences:
   language: "en"
