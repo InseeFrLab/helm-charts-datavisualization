@@ -1,3 +1,6 @@
+global:
+  security:
+    allowInsecureImages: true
 superset:
   init:
     adminUser:
@@ -70,7 +73,13 @@ superset:
       db_host: superset-db
 
   postgresql:
+    image:
+      repository: bitnamilegacy/postgresql
     fullnameOverride: "superset-db"
+
+  redis:
+    image:
+      repository: bitnamilegacy/redis
 
 ingress:
   enabled: false

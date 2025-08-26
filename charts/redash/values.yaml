@@ -1,4 +1,6 @@
 global:
+  security:
+    allowInsecureImages: true
   postgresql:
     auth:
       username: "admin"
@@ -8,6 +10,7 @@ global:
 postgresql:
   image:
     tag: "12"
+    repository: "bitnamilegacy/postgresql"
   fullnameOverride: "redash-db"
 
 ingress:
@@ -36,6 +39,8 @@ redash:
   postgresql:
     enabled: false
     existingSecret: toto
-
+  redis:
+    image:
+      repository: bitnamilegacy/redis
 userPreferences:
   language: "en"

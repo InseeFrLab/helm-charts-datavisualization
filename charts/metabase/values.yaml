@@ -8,6 +8,8 @@ service:
     tag: "v0.50.15"
 
 global:
+  security:
+    allowInsecureImages: true
   postgresql:
     auth:
       username: "admin"
@@ -18,6 +20,7 @@ global:
 postgresql:
   image:
     tag: "12"
+    repository: "bitnamilegacy/postgresql"
   fullnameOverride: "metabase-db"
 
 security:
