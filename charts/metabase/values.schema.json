@@ -187,6 +187,9 @@
     "ingress": {
       "type": "object",
       "form": true,
+      "x-onyxia": {
+        "overwriteSchemaWith": "viz/ingress.json"
+      },
       "title": "Ingress Details",
       "properties": {
         "enabled": {
