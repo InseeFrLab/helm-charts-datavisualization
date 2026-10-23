@@ -8,7 +8,7 @@ metadata:
     {{- include "library-chart.labels" . | nindent 4 }}
 spec:
 {{- if not .Values.autoscaling.enabled }}
-  replicas: {{ .Values.replicaCount }}
+  replicas: {{ .Values.replicaCount | int }}
 {{- end }}
   selector:
     matchLabels:
@@ -33,27 +33,27 @@ spec:
         - name: {{ .Chart.Name }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ .Values.service.image.repository }}:{{ .Values.service.image.tag | default .Chart.AppVersion }}"
-          imagePullPolicy: {{ .Values.service.image.pullPolicy }}
+          image: {{ printf "%v:%v" .Values.service.image.repository (.Values.service.image.tag | default .Chart.AppVersion) | quote }}
+          imagePullPolicy: {{ .Values.service.image.pullPolicy | quote }}
           env:
           - name: MB_DB_TYPE
             value: "postgres"
           - name: MB_DB_DBNAME
-            value: {{ .Values.global.postgresql.auth.database }}
+            value: {{ .Values.global.postgresql.auth.database | quote }}
           - name: MB_DB_PORT
             value: "5432"
           - name: MB_DB_USER
             value: postgres
           - name: MB_DB_PASS
-            value: {{ .Values.global.postgresql.auth.postgresPassword }}
+            value: {{ .Values.global.postgresql.auth.postgresPassword | quote }}
           - name: MB_DB_HOST
-            value: {{ .Values.postgresql.fullnameOverride }}
+            value: {{ .Values.postgresql.fullnameOverride | quote }}
           - name: MB_ADMIN_EMAIL
-            value: {{ .Values.security.mail }}
+            value: {{ .Values.security.mail | quote }}
 
           ports:
             - name: http
-              containerPort: {{ .Values.networking.metabase.port}}
+              containerPort: {{ .Values.networking.metabase.port | int }}
               protocol: TCP
           livenessProbe:
             httpGet:
