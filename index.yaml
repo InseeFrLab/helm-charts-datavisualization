@@ -3,6 +3,33 @@ entries:
   metabase:
   - apiVersion: v2
     appVersion: 1.0.1
+    created: "2026-10-26T10:26:25.879718542Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.23
+    - enabled: true
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 15.5.19
+    description: Metabase is a BI tool with a friendly UX and an integrated tooling
+      to let you explore data.
+    digest: 4d715706dae3cb4c3c812afd60e45a6b6f2c27b99cb62ceaf6a568cf964f08fa
+    home: https://www.metabase.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/metabase.png
+    keywords:
+    - Tool
+    - Data
+    name: metabase
+    sources:
+    - https://github.com/InseeFrLab/helm-charts-datavisualization/tree/main/charts/metabase
+    - https://hub.docker.com/r/metabase/metabase/
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-datavisualization/releases/download/metabase-2.0.4/metabase-2.0.4.tgz
+    version: 2.0.4
+  - apiVersion: v2
+    appVersion: 1.0.1
     created: "2025-08-26T09:43:28.29649069Z"
     dependencies:
     - name: library-chart
@@ -274,6 +301,36 @@ entries:
   redash:
   - apiVersion: v2
     appVersion: latest
+    created: "2026-10-26T10:26:26.114652325Z"
+    dependencies:
+    - name: redash
+      repository: https://getredash.github.io/contrib-helm-chart/
+      version: 3.0.0
+    - name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.6.15
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.23
+    description: Redash is an open source tool built for teams to query, visualize
+      and collaborate.
+    digest: 165643e9ad795b33fd1235f96af2b3b5f97120d2232a462433c45c398036b97b
+    home: https://redash.io/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/redash.png
+    keywords:
+    - Tool
+    - Data
+    name: redash
+    sources:
+    - https://github.com/InseeFrLab/redash
+    - https://github.com/InseeFrLab/helm-charts-datascience/tree/master/charts/redash
+    - https://github.com/getredash/redash
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-datavisualization/releases/download/redash-0.0.10/redash-0.0.10.tgz
+    version: 0.0.10
+  - apiVersion: v2
+    appVersion: latest
     created: "2025-08-26T09:43:28.631659621Z"
     dependencies:
     - name: redash
@@ -517,6 +574,30 @@ entries:
     - https://github.com/InseeFrLab/helm-charts-datavisualization/releases/download/redash-0.0.1/redash-0.0.1.tgz
     version: 0.0.1
   superset:
+  - apiVersion: v2
+    created: "2026-10-26T10:26:26.402925128Z"
+    dependencies:
+    - name: superset
+      repository: https://apache.github.io/superset
+      version: 0.13.5
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.41
+    description: Apache Superset is a modern data exploration and visualization platform.
+    digest: 3447603412853261c4c95116f11c9615ad5abea371e38cc72e507cccb172eb72
+    home: https://superset.apache.org/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/superset.png
+    keywords:
+    - BI
+    - Visualization
+    name: superset
+    sources:
+    - https://github.com/InseeFrLab/helm-charts-datascience/tree/master/charts/superset
+    - https://github.com/apache/superset
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-datavisualization/releases/download/superset-0.1.13/superset-0.1.13.tgz
+    version: 0.1.13
   - apiVersion: v2
     created: "2025-08-26T09:43:28.910031606Z"
     dependencies:
@@ -1049,4 +1130,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-datavisualization/releases/download/superset-0.0.1/superset-0.0.1.tgz
     version: 0.0.1
-generated: "2025-08-26T09:43:28.910174862Z"
+generated: "2026-10-26T10:26:26.403162504Z"
